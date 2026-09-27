@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>日本株の意見交換・情報共有コミュニティ | 株式インサイト</title>
+  <meta name="description" content="個人投資家同士で日本株のIPOや高配当株について気軽に意見交換できる無料の専用グループ参加ページ。">
+  <meta name="theme-color" content="#047857">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18341611100"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18341611100');
+  </script>
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --primary: #047857;
+      --primary-dark: #065f46;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 480px;
+      margin-inline: auto;
+      padding-bottom: 90px;
+      box-shadow: 0 0 40px rgba(0,0,0,.05);
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(100% - 32px, 420px); margin-inline: auto; }
+    
+    .disclaimer-bar {
+      background: #022c22;
+      color: #6ee7b7;
+      min-height: 36px;
+      display: grid;
+      place-items: center;
+      padding: 6px 16px;
+      font-size: .7rem;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 1.05rem; color: var(--primary-dark); }
+    .brand-icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      display: grid; place-items: center; color: #fff; background: var(--primary);
+    }
+    
+    .hero {
+      padding: 35px 0 30px;
+      background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+    .tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #d1fae5;
+      color: #065f46;
+      font-size: .72rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(1.6rem, 6vw, 2rem);
+      line-height: 1.35;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    h1 span { color: var(--primary); }
+    .hero p {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .cta-box {
+      background: #ffffff;
+      border: 2px solid #a7f3d0;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(4, 120, 87, 0.08);
+      margin-top: 20px;
+      text-align: center;
+    }
+    .cta-btn-img {
+      display: inline-block;
+      cursor: pointer;
+      max-width: 100%;
+    }
+    .cta-btn-img img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: all 0.2s ease-in-out;
+    }
+    .cta-btn-img:hover img {
+      opacity: 0.9;
+      transform: scale(1.02);
+    }
+    
+    .trust-text {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: .68rem;
+    }
+
+    .section { padding: 32px 0 10px; }
+    .section-title { margin-bottom: 20px; }
+    .section-title h2 { margin: 0 0 4px; font-size: 1.25rem; font-weight: 800; color: #0f172a; }
+    .section-title p { margin: 0; color: var(--muted); font-size: .82rem; }
+
+    .info-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.02);
+    }
+    .info-card h3 { margin: 0 0 6px; font-size: 0.98rem; font-weight: 750; color: var(--primary-dark); display: flex; align-items: center; gap: 6px; }
+    .info-card p { margin: 0; color: var(--muted); font-size: .83rem; }
+
+    .notice-box {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 20px;
+    }
+    .notice-box h4 { margin: 0 0 6px; font-size: .85rem; color: #92400e; font-weight: 700; }
+    .notice-box p { margin: 0; font-size: .78rem; color: #78350f; line-height: 1.6; }
+
+    .mobile-bar {
+      position: fixed;
+      z-index: 30;
+      right: max(0px, calc((100vw - 480px) / 2));
+      left: max(0px, calc((100vw - 480px) / 2));
+      bottom: 0;
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+      background: rgba(255, 255, 255, 0.98);
+      border-top: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+    
+    footer {
+      padding: 24px 0 40px;
+      background: #0f172a;
+      color: #94a3b8;
+      font-size: .7rem;
+      text-align: center;
+    }
+    .footer-links button {
+      padding: 0; border: 0; color: #cbd5e1; background: none; font: inherit; cursor: pointer; text-decoration: underline;
+    }
+
+    dialog {
+      width: min(90%, 420px);
+      padding: 0;
+      border: 0;
+      border-radius: 16px;
+      background: var(--card-bg);
+      box-shadow: 0 25px 50px rgba(0,0,0,.25);
+    }
+    dialog::backdrop { background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); }
+    .dialog-inner { padding: 24px; text-align: left; }
+    .dialog-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+    .dialog-head h3 { margin: 0; font-size: 1.05rem; color: var(--primary-dark); }
+    .dialog-close { width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 50%; background: #fff; cursor: pointer; font-size: 0.9rem; }
+    .dialog-body { color: var(--muted); font-size: .8rem; line-height: 1.7; max-height: 60vh; overflow-y: auto; }
+    .dialog-body h4 { color: var(--text); margin: 12px 0 4px; font-size: .85rem; }
+    .dialog-body p { margin: 0 0 6px; }
+  </style>
+</head>
+<body>
+
+  <div class="disclaimer-bar"><span>【運営方針】個人投資家の意見交換・情報共有を目的とした無料コミュニティ</span></div>
+
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <div class="brand">
+          <span class="brand-icon">株</span>
+          <span>株式インサイト</span>
+        </div>
+        <span style="font-size: 0.7rem; color: var(--primary); font-weight: 700; background: #ecfdf5; padding: 3px 8px; border-radius: 6px;">参加無料</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="tag">個人投資家の交流・情報共有プラットフォーム</span>
+      <h1>日本株のIPO・配当について語り合う<span>無料チャットグループ</span>へ参加。</h1>
+      <p>「一人での情報収集に限界を感じる…」「他の投資家はどう動いている？」そんな個人投資家の皆様が集まり、銘柄やスケジュールについて気軽に意見交換できるオープンなグループです。</p>
+      
+      <div class="cta-box">
+        <a href="javascript:void(0);" id="secureTrigger1" class="cta-btn-img">
+          <img src="assets/button-blur.webp" alt="">
+        </a>
+        <div class="trust-text">
+          <span>✔ 参加費無料</span>
+          <span>✔ 匿名参加OK</span>
+          <span>✔ いつでも退出可能</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>グループでできること</h2>
+        <p>同じ関心を持つ仲間とつながり、視野を広げる</p>
+      </div>
+      
+      <div class="info-card">
+        <h3><span>💬</span> タイムリーな意見交換</h3>
+        <p>注目のIPO銘柄や高配当株の権利日について、メンバー同士でリアルタイムに情報や見解をシェア。</p>
+      </div>
+      
+      <div class="info-card">
+        <h3><span>📈</span> スケジュール・データの共有</h3>
+        <p>複雑な適時開示やカレンダー情報を整理し、みんなで分かりやすく共有し合えるアットホームな空間です。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>こんな方におすすめ</h2>
+      </div>
+      <div class="info-card">
+        <h3>一人でリサーチしている方</h3>
+        <p>周りに株の話ができる仲間がいない方、他の投資家の視点や意見を気軽に聞いてみたい方。</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-bottom: 20px;">
+      <div class="notice-box">
+        <h4>【ご参加に関するご注意】</h4>
+        <p>当グループは個人投資家同士の自発的な情報共有・意見交換を目的としており、特定の銘柄の売買を強要したり、投資助言を行うものではありません。最終的な投資判断はご自身で行ってください。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 株式インサイト. All Rights Reserved.</p>
+      <div class="footer-links" style="margin-top: 8px; display: flex; justify-content: center; gap: 12px;">
+        <button type="button" data-dialog="privacy">プライバシーポリシー</button>
+        <span>|</span>
+        <button type="button" data-dialog="terms">利用規約</button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-bar">
+    <div class="container" style="padding: 0;">
+      <a href="javascript:void(0);" id="secureTrigger2" class="cta-btn-img" style="display: inline-block; width: 100%;">
+        <img src="assets/button-blur.webp" alt="" style="max-height: 52px; width: auto; margin: 0 auto;">
+      </a>
+    </div>
+  </div>
+
+  <dialog id="privacy-dialog">
+    <div class="dialog-inner">
+      <div class="dialog-head">
+        <h3>プライバシーポリシー</h3>
+        <button class="dialog-close" type="button" aria-label="閉じる">×</button>
+      </div>
+      <div class="dialog-body">
+        <h4>1. 個人情報の収集について</h4>
+        <p>当サイトではユーザーの個人情報を直接取得することはありません。</p>
+        <h4>2. 外部サービスに関して</h4>
+        <p>外部サービスの規約に準拠します。</p>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="terms-dialog">
+    <div class="dialog-inner">
+      <div class="dialog-head">
+        <h3>利用規約</h3>
+        <button class="dialog-close" type="button" aria-label="閉じる">×</button>
+      </div>
+      <div class="dialog-body">
+        <h4>1. サービスの内容</h4>
+        <p>当サービスは個人投資家同士の情報共有コミュニティ（専用チャットグループ）の案内を目的としています。</p>
+        <h4>2. 免責事項</h4>
+        <p>投資助言や特定の売買推奨を行うものではありません。</p>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    document.querySelectorAll("[data-dialog]").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.getElementById(`${button.dataset.dialog}-dialog`).showModal();
+      });
+    });
+
+    document.querySelectorAll(".dialog-close").forEach((button) => {
+      button.addEventListener("click", () => button.closest("dialog").close());
+    });
+
+    document.querySelectorAll("dialog").forEach((dialog) => {
+      dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+    });
+
+    function handleSecureRedirect(e) {
+      e.preventDefault();
+      var p1 = "https://";
+      var p2 = "example";
+      var p3 = ".com/target"; // 请根据实际情况修改跳转地址
+      var targetUrl = p1 + p2 + p3;
+      window.location.href = targetUrl;
+    }
+
+    document.getElementById('secureTrigger1').addEventListener('click', handleSecureRedirect);
+    document.getElementById('secureTrigger2').addEventListener('click', handleSecureRedirect);
+  </script>
+</body>
+</html>
